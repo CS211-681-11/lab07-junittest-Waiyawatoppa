@@ -11,20 +11,19 @@ class StudentTest {
     Student s;
     @BeforeEach
     void init() {
-        s = new Student("67xxxxxxxx", "Tester");
+        s = new Student("67xxxxxxxx5", "Piyalin");
     }
 
     @Test
-    @DisplayName("ทดสอบการเพิ่มคะแนน  40.1")
+    @DisplayName("ทดสอบการเพิ่มคะแนน  70.1")
     void testAddScore() {
-        s.addScore(40.1);
-        assertEquals(40.1, s.getScore());
+        s.addScore(70.1);
+        assertEquals(70.1, s.getScore());
     }
 
     @Test
     @DisplayName("ทดสอบการคำนวณเกรด")
     void testCalculateGrade() {
-        Student s = new Student("67xxxxxxxx", "Tester");
         s.addScore(90);
         assertEquals("A", s.grade());
     }
@@ -32,12 +31,12 @@ class StudentTest {
     @Test
     @DisplayName("ทดสอบ ID")
     void TestIsId() {
-        assertTrue(s.isId("67xxxxxxxx"));
+        assertTrue(s.isId("67xxxxxxxx5"));
     }
 
     @Test
-    @DisplayName("ทดสอบ isName")
+    @DisplayName("ทดสอบในชื่อว่าไม่มี String ตัวที่ระบุ")
     void TestIsName() {
-        assertTrue(s.isNameContains("Tester"));
+        assertTrue(s.isNameContains("Piyalin"));
     }
 }

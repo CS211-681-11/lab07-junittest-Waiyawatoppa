@@ -50,4 +50,19 @@ class StudentListTest {
         correctFilterStudent.addNewStudent("67xxxxxxx3", "Pobjer");
         assertEquals(filterStudents.getStudents().toString(), correctFilterStudent.getStudents().toString());
     }
+
+    @Test
+    @DisplayName("ทดสอบการให้คะแนนตาม Student ID")
+    void testGiveScoreToId(){
+        studentList.addNewStudent("67xxxxxxxx1", "Pobpa");
+        studentList.giveScoreToId("67xxxxxxxx1", 100);
+        assertEquals(studentList.getStudents().get(0).getScore(), 100);
+    }
+
+    @Test
+    @DisplayName("ทดสอบการดูเกรดด้วย Student ID")
+    void testViewGradeId(){
+        studentList.addNewStudent("67xxxxxxxx3", "Manod", 65);
+        assertEquals(studentList.getStudents().get(0).getScore(), 65);
+    }
 }
